@@ -1,0 +1,12 @@
+{
+	"line_number": "〇",
+	"mistake_bool": "間違いの有無",
+	"mistake": {
+	  "missing_character": "抜けている文字",
+	  "start_position": "開始位置",
+	  "end_position": "終了位置"
+	},
+	"question": "プログラムの間違いについて聞き出す質問文",
+	"correct_program": "正解のプログラム"
+  }
+  

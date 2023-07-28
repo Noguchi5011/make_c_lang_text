@@ -1,0 +1,6 @@
+/prompt/*
+!/prompt/.gitkeep
+/generate/*
+!/generate/.gitkeep
+/combined_results.json
+/.env

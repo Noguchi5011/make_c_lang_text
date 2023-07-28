@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  question_generator:
+    build:
+      context: .
+      network: host
+      dockerfile: dockerfile
+      args:
+        - HTTP_PROXY=${HTTP_PROXY}
+        - HTTPS_PROXY=${HTTPS_PROXY}
+    container_name: c_pro_generator
+    environment:
+      - TZ=Asia/Tokyo
+      - http_proxy=$HTTP_PROXY
+      - https_proxy=$HTTPS_PROXY
+    env_file:
+      - .env
+    volumes:
+      - .:/root/c_program
+    working_dir: /root/c_program
+    tty: true
+    restart: always
+   

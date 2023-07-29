@@ -60,7 +60,7 @@ for filename in file_list:
     for i in range(line_count):
         if lines[i].strip() == '':
             continue        
-        template = json.dumps(json_template, indent=4).replace('"〇"', f'"{i+1}"')
+        template = json.dumps(json_template, ensure_ascii=False, indent=4).replace('"〇"', f'"{i+1}"')
         prompt = f"{program_data}\n上記のC言語プログラムがある。{i+1}行目について\n{template}\nこのjson形式のテンプレートに合わせて結果を出力してください。"
         prompt_file = f"{filename.replace('.c','')}_{i+1}行目.txt"
         prompt_file_name = f"{filename.replace('.c','')}_{i+1}行目"
@@ -85,4 +85,4 @@ for filename in file_list:
 
 # Save the entire result to a JSON file
 with open('combined_results.json', 'w') as result_file:
-    json.dump(results, result_file, indent=4)
+    json.dump(results, result_file, ensure_ascii=False, indent=4)
